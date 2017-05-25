@@ -14,8 +14,8 @@ export class CustomerComponent implements OnInit {
         this.customerForm = new FormGroup({
             firstName: new FormControl(),
             lastName: new FormControl(),
-            email: FormControl(),
-            sendCatalog: new FormControl()
+            email: new FormControl(),
+            sendCatalog: new FormControl(true)
         });
     }
 
