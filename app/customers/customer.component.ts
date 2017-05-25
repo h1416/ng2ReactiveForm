@@ -11,7 +11,7 @@ export class CustomerComponent implements OnInit {
     customer: Customer= new Customer();
 
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+        this.customerForm = new FormGroup();
     }
 
     save() {
