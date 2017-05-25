@@ -11,7 +11,12 @@ export class CustomerComponent implements OnInit {
     customer: Customer= new Customer();
 
     ngOnInit(): void {
-        this.customerForm = new FormGroup();
+        this.customerForm = new FormGroup({
+            firstName: new FormControl(),
+            lastName: new FormControl(),
+            email: FormControl(),
+            sendCatalog: new FormControl()
+        });
     }
 
     save() {
