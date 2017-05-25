@@ -192,7 +192,7 @@
                         <span>
                             <button class="btn btn-primary"
                                     type="submit"
-                                    [disabled]="!signupForm.valid">
+                                    [disabled]="!customerForm.valid">
                                 Save
                             </button>
                         </span>
@@ -202,7 +202,7 @@
         </form>
     </div>
 </div>
-<br>Dirty: {{ signupForm.dirty }} 
-<br>Touched: {{ signupForm.touched }}
-<br>Valid: {{ signupForm.valid }}
-<br>Value: {{ signupForm.value | json }}
+<br>Dirty: {{ customerForm.dirty }} 
+<br>Touched: {{ customerForm.touched }}
+<br>Valid: {{ customerForm.valid }}
+<br>Value: {{ customerForm.value | json }}
