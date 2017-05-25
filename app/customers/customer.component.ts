@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Customer } from './customer';
 
@@ -6,9 +6,13 @@ import { Customer } from './customer';
     selector: 'my-signup',
     templateUrl: './app/customers/customer.component.html'
 })
-export class CustomerComponent  {
+export class CustomerComponent implements OnInit {
     customerForm: FormGroup;
     customer: Customer= new Customer();
+
+    ngOnInit(): void {
+        throw new Error("Method not implemented.");
+    }
 
     save() {
         console.log(this.customerForm);
