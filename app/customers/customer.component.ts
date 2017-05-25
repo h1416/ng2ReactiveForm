@@ -7,6 +7,7 @@ import { Customer } from './customer';
     templateUrl: './app/customers/customer.component.html'
 })
 export class CustomerComponent  {
+    customerForm: FormGroup;
     customer: Customer= new Customer();
 
     save() {
