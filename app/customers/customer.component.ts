@@ -11,7 +11,7 @@ export class CustomerComponent  {
     customer: Customer= new Customer();
 
     save() {
-        console.log(customerForm.form);
-        console.log('Saved: ' + JSON.stringify(customerForm.value));
+        console.log(this.customerForm);
+        console.log('Saved: ' + JSON.stringify(this.customerForm.value));
     }
  }
