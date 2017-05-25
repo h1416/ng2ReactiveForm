@@ -23,7 +23,8 @@
                                minlength="3"
                                [(ngModel)]=customer.firstName
                                name="firstName"
-                               #firstNameVar="ngModel" />
+                               #firstNameVar="ngModel"
+                               formControlName="firstName" />
                         <span class="help-block" *ngIf="(firstNameVar.touched || firstNameVar.dirty) && firstNameVar.errors">
                             <span *ngIf="firstNameVar.errors.required">
                                 Please enter your first name.
