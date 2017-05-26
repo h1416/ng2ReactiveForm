@@ -18,7 +18,7 @@ var CustomerComponent = (function () {
     }
     CustomerComponent.prototype.ngOnInit = function () {
         this.customerForm = this.formBuilder.group({
-            firstName: '',
+            firstName: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]],
             lastName: '',
             email: '',
             sendCatalog: true
