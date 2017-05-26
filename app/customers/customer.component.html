@@ -41,8 +41,6 @@
                                id="lastNameId" 
                                type="text" 
                                placeholder="Last Name (required)" 
-                               required 
-                               maxlength="50"
                                formControlName='lastName' />
                         <span class="help-block" *ngIf="(customerForm.get('lastName').touched || customerForm.get('lastName').dirty) && customerForm.get('lastName').errors">
                             <span *ngIf="customerForm.get('lastName').errors.required">
