@@ -21,6 +21,8 @@ var CustomerComponent = (function () {
             firstName: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]],
             lastName: ['', [forms_1.Validators.required, forms_1.Validators.maxLength(50)]],
             email: ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+            phone: '',
+            notification: 'email',
             sendCatalog: true
         });
     };
