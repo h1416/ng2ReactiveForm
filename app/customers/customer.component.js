@@ -12,15 +12,16 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var customer_1 = require('./customer');
 var CustomerComponent = (function () {
-    function CustomerComponent() {
+    function CustomerComponent(formBuilder) {
+        this.formBuilder = formBuilder;
         this.customer = new customer_1.Customer();
     }
     CustomerComponent.prototype.ngOnInit = function () {
-        this.customerForm = new forms_1.FormGroup({
-            firstName: new forms_1.FormControl(),
-            lastName: new forms_1.FormControl(),
-            email: new forms_1.FormControl(),
-            sendCatalog: new forms_1.FormControl(true)
+        this.customerForm = this.formBuilder.group({
+            firstName: '',
+            lastName: { value: 'vo', disabled: true },
+            email: '',
+            sendCatalog: true
         });
     };
     CustomerComponent.prototype.save = function () {
@@ -32,7 +33,7 @@ var CustomerComponent = (function () {
             selector: 'my-signup',
             templateUrl: './app/customers/customer.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [forms_1.FormBuilder])
     ], CustomerComponent);
     return CustomerComponent;
 }());
