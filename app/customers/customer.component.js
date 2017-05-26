@@ -30,6 +30,8 @@ var CustomerComponent = (function () {
         console.log(this.customerForm);
         console.log('Saved: ' + JSON.stringify(this.customerForm.value));
     };
+    CustomerComponent.prototype.setNotification = function (notifyVia) {
+    };
     CustomerComponent = __decorate([
         core_1.Component({
             selector: 'my-signup',

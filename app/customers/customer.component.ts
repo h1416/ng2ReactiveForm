@@ -27,4 +27,8 @@ export class CustomerComponent implements OnInit {
         console.log(this.customerForm);
         console.log('Saved: ' + JSON.stringify(this.customerForm.value));
     }
+
+    setNotification(notifyVia: string): void {
+
+    }
  }

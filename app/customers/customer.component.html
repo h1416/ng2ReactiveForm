@@ -104,13 +104,15 @@
                         <label class="radio-inline">
                             <input type="radio"
                                 value="email"
-                                formControlName="notification">
+                                formControlName="notification"
+                                (click)="setNotification('email')">
                             Email
                         </label>
                         <label class="radio-inline">
                             <input type="radio"
                                 value="text"
-                                formControlName="notification">
+                                formControlName="notification"
+                                (click)="setNotification('text')">
                             Text
                         </label>
 
