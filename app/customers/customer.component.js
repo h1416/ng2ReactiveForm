@@ -31,6 +31,14 @@ var CustomerComponent = (function () {
         console.log('Saved: ' + JSON.stringify(this.customerForm.value));
     };
     CustomerComponent.prototype.setNotification = function (notifyVia) {
+        var phoneControl = this.customerForm.get('phone');
+        if (notifyVia === 'text') {
+            phoneControl.setValidators(forms_1.Validators.required);
+        }
+        else {
+            phoneControl.clearValidators();
+        }
+        phoneControl.updateValueAndValidity();
     };
     CustomerComponent = __decorate([
         core_1.Component({
