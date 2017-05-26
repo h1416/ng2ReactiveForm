@@ -19,7 +19,7 @@ var CustomerComponent = (function () {
     CustomerComponent.prototype.ngOnInit = function () {
         this.customerForm = this.formBuilder.group({
             firstName: '',
-            lastName: { value: 'vo', disabled: true },
+            lastName: '',
             email: '',
             sendCatalog: true
         });
