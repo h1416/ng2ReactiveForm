@@ -23,6 +23,7 @@ var CustomerComponent = (function () {
             email: ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
             phone: '',
             notification: 'email',
+            rating: '',
             sendCatalog: true
         });
     };

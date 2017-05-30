@@ -19,7 +19,7 @@ export class CustomerComponent implements OnInit {
             email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
             phone: '',
             notification: 'email',
-            
+            rating: '',
             sendCatalog: true
         });
     }
