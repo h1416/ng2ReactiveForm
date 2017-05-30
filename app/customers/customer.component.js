@@ -20,6 +20,17 @@ function ratingRange(min, max) {
         return null; // if the validation passes
     };
 }
+function emailMatcher(c) {
+    var email = c.get('email');
+    var confirmEmail = c.get('confirmEmail');
+    if (email.pristine || confirmEmail.pristine) {
+        return null;
+    }
+    if (email.value === confirmEmail.value) {
+        return null;
+    }
+    return { 'match': true }; // both controls have been touched and their values do not match
+}
 var CustomerComponent = (function () {
     function CustomerComponent(formBuilder) {
         this.formBuilder = formBuilder;
@@ -32,7 +43,7 @@ var CustomerComponent = (function () {
             emailGroup: this.formBuilder.group({
                 email: ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
                 confirmEmail: ['', forms_1.Validators.required],
-            }),
+            }, { validator: emailMatcher }),
             phone: '',
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
