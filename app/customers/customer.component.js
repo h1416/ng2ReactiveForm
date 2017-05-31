@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
+require('rxjs/add/operator/debounceTime');
 var customer_1 = require('./customer');
 function ratingRange(min, max) {
     return function (c) {
@@ -60,7 +61,7 @@ var CustomerComponent = (function () {
             .subscribe(function (value) { return _this.setNotification(value); });
         // watch for email form control value changes
         var emailControl = this.customerForm.get('emailGroup.email');
-        emailControl.valueChanges.subscribe(function (value) {
+        emailControl.valueChanges.debounceTime(1000).subscribe(function (value) {
             return _this.setMessage(emailControl);
         });
     };
