@@ -34,7 +34,7 @@ export class CustomerComponent implements OnInit {
     customerForm: FormGroup;
     customer: Customer = new Customer();
     emailMessage: string;
-    
+
     // this can come from a service instead of hardcoded in here
     private validationMessages = {
         required: 'Please enter your email address.',
@@ -57,7 +57,7 @@ export class CustomerComponent implements OnInit {
             sendCatalog: true,
             addressType: 'home',
             street1: '',
-            street2:'',
+            street2: '',
             city: '',
             state: '',
             zip: ''
@@ -65,8 +65,8 @@ export class CustomerComponent implements OnInit {
 
         // watch for notification value changes
         this.customerForm.get('notification').valueChanges
-                            .subscribe(value => this.setNotification(value));
-        
+            .subscribe(value => this.setNotification(value));
+
         // watch for email form control value changes
         const emailControl = this.customerForm.get('emailGroup.email');
         emailControl.valueChanges.debounceTime(1000).subscribe(value =>
