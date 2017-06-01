@@ -55,14 +55,7 @@ export class CustomerComponent implements OnInit {
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
             sendCatalog: true,
-            addresses: this.formBuilder.group({
-                addressType: 'home',
-                street1: '',
-                street2: '',
-                city: '',
-                state: '',
-                zip: ''
-            })
+            addresses: this.buildAddress()
         });
 
         // watch for notification value changes
@@ -72,8 +65,18 @@ export class CustomerComponent implements OnInit {
         // watch for email form control value changes
         const emailControl = this.customerForm.get('emailGroup.email');
         emailControl.valueChanges.debounceTime(1000).subscribe(value =>
-            this.setMessage(emailControl)
-        );
+            this.setMessage(emailControl));
+    }
+
+    buildAddress(): FormGroup {
+        return this.formBuilder.group({
+            addressType: 'home',
+            street1: '',
+            street2: '',
+            city: '',
+            state: '',
+            zip: ''
+        })
     }
 
     save() {

@@ -55,14 +55,7 @@ var CustomerComponent = (function () {
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
             sendCatalog: true,
-            addresses: this.formBuilder.group({
-                addressType: 'home',
-                street1: '',
-                street2: '',
-                city: '',
-                state: '',
-                zip: ''
-            })
+            addresses: this.buildAddress()
         });
         // watch for notification value changes
         this.customerForm.get('notification').valueChanges
@@ -71,6 +64,16 @@ var CustomerComponent = (function () {
         var emailControl = this.customerForm.get('emailGroup.email');
         emailControl.valueChanges.debounceTime(1000).subscribe(function (value) {
             return _this.setMessage(emailControl);
+        });
+    };
+    CustomerComponent.prototype.buildAddress = function () {
+        return this.formBuilder.group({
+            addressType: 'home',
+            street1: '',
+            street2: '',
+            city: '',
+            state: '',
+            zip: ''
         });
     };
     CustomerComponent.prototype.save = function () {
