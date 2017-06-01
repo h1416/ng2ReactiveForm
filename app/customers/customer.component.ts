@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
 
 import 'rxjs/add/operator/debounceTime';
 import { Customer } from './customer';
@@ -55,7 +55,7 @@ export class CustomerComponent implements OnInit {
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
             sendCatalog: true,
-            addresses: this.buildAddress()
+            addresses: this.formBuilder.array([ this.buildAddress() ])
         });
 
         // watch for notification value changes

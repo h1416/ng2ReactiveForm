@@ -55,7 +55,7 @@ var CustomerComponent = (function () {
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
             sendCatalog: true,
-            addresses: this.buildAddress()
+            addresses: this.formBuilder.array([this.buildAddress()])
         });
         // watch for notification value changes
         this.customerForm.get('notification').valueChanges
