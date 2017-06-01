@@ -55,12 +55,14 @@ var CustomerComponent = (function () {
             notification: 'email',
             rating: ['', ratingRange(1, 5)],
             sendCatalog: true,
-            addressType: 'home',
-            street1: '',
-            street2: '',
-            city: '',
-            state: '',
-            zip: ''
+            addresses: this.formBuilder.group({
+                addressType: 'home',
+                street1: '',
+                street2: '',
+                city: '',
+                state: '',
+                zip: ''
+            })
         });
         // watch for notification value changes
         this.customerForm.get('notification').valueChanges
