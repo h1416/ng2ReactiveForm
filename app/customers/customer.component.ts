@@ -35,6 +35,10 @@ export class CustomerComponent implements OnInit {
     customer: Customer = new Customer();
     emailMessage: string;
 
+    get addresses(): FormArray {
+        return <FormArray>this.customerForm.get('addresses');
+    }
+
     // this can come from a service instead of hardcoded in here
     private validationMessages = {
         required: 'Please enter your email address.',
