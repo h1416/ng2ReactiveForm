@@ -73,6 +73,10 @@ var CustomerComponent = (function () {
             return _this.setMessage(emailControl);
         });
     };
+    // add another address form group the the addresses form array
+    CustomerComponent.prototype.addAddress = function () {
+        this.addresses.push(this.buildAddress());
+    };
     CustomerComponent.prototype.buildAddress = function () {
         return this.formBuilder.group({
             addressType: 'home',

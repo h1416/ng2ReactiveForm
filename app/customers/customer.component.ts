@@ -72,6 +72,11 @@ export class CustomerComponent implements OnInit {
             this.setMessage(emailControl));
     }
 
+    // add another address form group the the addresses form array
+    addAddress(): void {
+        this.addresses.push(this.buildAddress());
+    }
+
     buildAddress(): FormGroup {
         return this.formBuilder.group({
             addressType: 'home',
